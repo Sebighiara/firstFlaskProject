@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+
+
+{% block title %} 
+	{{ title }}
+{% endblock title %}
+
+
+
+{% block content %}	
+	<div class="container">
+		<h1>Subscribe To My Newsletter...</h1>
+	 	<h2>Stacked form</h2>
+	 	<form action="" method="POST">
+	    	<div class="form-group">
+	      		<input type="text" class="form-control" placeholder="First Name" name="email">
+	    	</div>
+	    	<br>
+	    	<div class="form-group">
+	      		<input type="text" class="form-control" placeholder="Last Name" name="email">
+	    	</div>
+	    	<br>
+	    	<div class="form-group">
+    			<input type="email" class="form-control" placeholder="Email" id="email" name="email">
+  			</div>
+  			<br>
+	    	<button type="submit" class="btn btn-outline-primary">Subscribe</button>
+	  	</form>
+	</div>
+{% endblock content %}
