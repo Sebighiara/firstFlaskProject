@@ -9,23 +9,26 @@
 
 
 {% block content %}	
-	<div class="container">
-		<h1>Subscribe To My Newsletter...</h1>
-	 	<h2>Stacked form</h2>
-	 	<form action="" method="POST">
-	    	<div class="form-group">
-	      		<input type="text" class="form-control" placeholder="First Name" name="email">
-	    	</div>
-	    	<br>
-	    	<div class="form-group">
-	      		<input type="text" class="form-control" placeholder="Last Name" name="email">
-	    	</div>
-	    	<br>
-	    	<div class="form-group">
-    			<input type="email" class="form-control" placeholder="Email" id="email" name="email">
-  			</div>
-  			<br>
-	    	<button type="submit" class="btn btn-outline-primary">Subscribe</button>
-	  	</form>
-	</div>
+	<h1>Subscribe To My Newsletter...</h1>
+	{% if statementError %}
+		<div class="alert alert-danger">
+			<strong>Error</strong> {{ statementError }}
+		</div>
+	{% endif %}
+	<br>
+ 	<form action="{{ url_for('formPage') }}" method="POST">
+    	<div class="form-group">
+      		<input type="text" class="form-control" placeholder="First Name" name="firstName" value="{{ firstName }}">
+    	</div>
+    	<br>
+    	<div class="form-group">
+      		<input type="text" class="form-control" placeholder="Last Name" name="lastName" value="{{ lastName }}">
+    	</div>
+    	<br>
+    	<div class="form-group">
+			<input type="email" class="form-control" placeholder="Email" id="email" name="email" value="{{ email }}">
+		</div>
+		<br>
+    	<button type="submit" class="btn btn-outline-primary">Subscribe</button>
+  	</form>
 {% endblock content %}

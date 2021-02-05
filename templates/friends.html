@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+
+{% block title %} 
+	{{ title }}
+{% endblock title %}
+
+
+{% block content %}
+	<h1>Friends...</h1>
+	<br>
+	<form action="{{ url_for('friendsPage') }}" method="POST">
+		<input type="text" placeholder="Name" name="name">
+		<input class="btn btn-secondary" type="submit" value="Add friend">
+	</form>
+	{% for friend in friends %}
+		<h4>{{ friend.name }}</h4>
+	{% endfor %}
+{% endblock content %}
